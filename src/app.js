@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template =  (
+import {Header} from './components/Header';
+import PicTheme from './components/PicTheme';
+import TextDescription from './components/TextDescription';
+import NextStep from './components/NextStep';
+
+import './styles/main.scss';
+
+const Template = () => (
     <div>
-        {/* <Header/> */}
+        <Header />
         <main>
-            <h1>VZLETI GOVNO</h1>
-            {/* <SVG/>
-            <TextDesc/>
-            <NextStep/> */}
+            <PicTheme/>
+            <TextDescription/>
+            <NextStep/>
         </main>
     </div>
 );
-ReactDOM.render(template, document.getElementById('app'));
+
+ReactDOM.render(<Template />, document.getElementById('app'));

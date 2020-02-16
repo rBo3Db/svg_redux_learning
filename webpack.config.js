@@ -1,12 +1,15 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
 	devtool: 'source-map',
 	entry: "./src/app.js",
+	resolve: {
+		extensions: [ '.jsx', '.js' ],
+	  },
 	output: {
 		path: path.join(__dirname, "/dist"),
 		filename: "index_bundle.js"
@@ -14,7 +17,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
@@ -24,13 +27,15 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract(
-					{
-						fallback: 'style-loader',
-						use: ['css-loader']
-					}
-				)
+				test: /\.scss$/,
+				use: [
+					// fallback to style-loader in development
+					process.env.NODE_ENV !== 'production'
+						? 'style-loader'
+						: MiniCssExtractPlugin.loader,
+					'css-loader',
+					'sass-loader'
+				]
 			},
 			{
 				test: /\.(gif|png|jpe?g|svg)$/i,
@@ -53,6 +58,12 @@ module.exports = {
 			filename: "index.html",  //target html
 			template: "./src/index.html" //source html
 		}),
+		new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: ".[name].css",
+            chunkFilename: "[id].css"
+        }),
 		new ExtractTextPlugin({ filename: 'css/style.css' }),	
 	]
 }
