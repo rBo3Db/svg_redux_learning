@@ -1,8 +1,11 @@
 import React from 'react';
 
+const selectDetail = (event) => {
+    console.log(event.target.href.baseVal)
+}
 const PicTheme = () => {
     return (
-        <svg width="237" height="331" viewBox="0 0 237 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
+        <svg className="pic-of-crashed-elements" onClick={selectDetail} width="237" height="331" viewBox="0 0 237 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
             <title>Group</title>
             <desc>Created using Figma</desc>
             <g id="Canvas" transform="translate(-7510 -4816)">

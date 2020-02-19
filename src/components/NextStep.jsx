@@ -1,7 +1,9 @@
 import React from 'react';
 
 const NextStep = () => {
-    return('1');
+    return(
+        <button class="next-step">Следующий шаг</button>
+    );
 }
 
 export default NextStep;

@@ -1,0 +1,9 @@
+.zoom-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include element('icon') {
+        width: 40px;
+        margin: 5px;
+    }
+}

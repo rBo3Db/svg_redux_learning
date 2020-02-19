@@ -1,0 +1,8 @@
+.descriotion-line {
+    display: flex;
+    justify-content: space-around;
+    @include element('delete') {
+        width: 20px;
+        vertical-align: middle;
+    }
+}
