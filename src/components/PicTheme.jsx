@@ -1,154 +1,152 @@
 import React from 'react';
 
-const selectDetail = (event) => {
-    console.log(event.target.href.baseVal)
-}
-const PicTheme = () => {
+export const PicTheme = ({clickHandler, getColor}) => {
+
     return (
-        <svg className="pic-of-crashed-elements" onClick={selectDetail} width="237" height="331" viewBox="0 0 237 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
+        <svg className="pic-of-crashed-elements" onClick={clickHandler} width="237" height="331" viewBox="0 0 237 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
             <title>Group</title>
             <desc>Created using Figma</desc>
             <g id="Canvas" transform="translate(-7510 -4816)">
                 <g id="Group">
-                    <g id="Vector">
+                    <g id="#path0_fill">
                         <use xlinkHref="#path0_fill" transform="translate(7511 4858.89)" fill="#FFFFFF" />
-                        <use xlinkHref="#path1_stroke" transform="translate(7511 4858.89)" fill="#7C7E8F" />
+                        <use xlinkHref="#path1_stroke" transform="translate(7511 4858.89)" fill={getColor('#path0_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path2_fill">
                         <use xlinkHref="#path2_fill" transform="translate(7531.19 4836.34)" fill="#FFFFFF" />
-                        <use xlinkHref="#path3_stroke" transform="translate(7531.19 4836.34)" fill="#F2C94C" />
+                        <use xlinkHref="#path3_stroke" transform="translate(7531.19 4836.34)" fill={getColor('#path2_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path4_fill">
                         <use xlinkHref="#path4_fill" transform="translate(7517.69 4901.59)" fill="#FFFFFF" />
-                        <use xlinkHref="#path5_stroke" transform="translate(7517.69 4901.59)" fill="#7C7E8F" />
+                        <use xlinkHref="#path5_stroke" transform="translate(7517.69 4901.59)" fill={getColor('#path4_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path6_fill">
                         <use xlinkHref="#path6_fill" transform="translate(7515.75 5050.23)" fill="#FFFFFF" />
-                        <use xlinkHref="#path7_stroke" transform="translate(7515.75 5050.23)" fill="#7C7E8F" />
+                        <use xlinkHref="#path7_stroke" transform="translate(7515.75 5050.23)" fill={getColor('#path6_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path8_fill">
                         <use xlinkHref="#path8_fill" transform="translate(7531.5 4927.67)" fill="#FFFFFF" />
-                        <use xlinkHref="#path9_stroke" transform="translate(7531.5 4927.67)" fill="#F2C94C" />
+                        <use xlinkHref="#path9_stroke" transform="translate(7531.5 4927.67)" fill={getColor('#path8_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path10_fill">
                         <use xlinkHref="#path10_fill" transform="translate(7531.38 4985.91)" fill="#FFFFFF" />
-                        <use xlinkHref="#path11_stroke" transform="translate(7531.38 4985.91)" fill="#7C7E8F" />
+                        <use xlinkHref="#path11_stroke" transform="translate(7531.38 4985.91)" fill={getColor('#path10_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path12_fill">
                         <use xlinkHref="#path12_fill" transform="translate(7532.41 5029.6)" fill="#FFFFFF" />
-                        <use xlinkHref="#path13_stroke" transform="translate(7532.41 5029.6)" fill="#7C7E8F" />
+                        <use xlinkHref="#path13_stroke" transform="translate(7532.41 5029.6)" fill={getColor('#path12_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path14_fill">
                         <use xlinkHref="#path14_fill" transform="translate(7574 4937.9)" fill="#FFFFFF" />
-                        <use xlinkHref="#path15_stroke" transform="translate(7574 4937.9)" fill="#7C7E8F" />
+                        <use xlinkHref="#path15_stroke" transform="translate(7574 4937.9)" fill={getColor('#path14_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path16_fill">
                         <use xlinkHref="#path16_fill" transform="translate(7575.56 4991.72)" fill="#FFFFFF" />
-                        <use xlinkHref="#path17_stroke" transform="translate(7575.56 4991.72)" fill="#7C7E8F" />
+                        <use xlinkHref="#path17_stroke" transform="translate(7575.56 4991.72)" fill={getColor('#path16_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path18_fill">
                         <use xlinkHref="#path18_fill" transform="translate(7561.81 4966.21)" fill="#FFFFFF" />
-                        <use xlinkHref="#path19_stroke" transform="translate(7561.81 4966.21)" fill="#7C7E8F" />
+                        <use xlinkHref="#path19_stroke" transform="translate(7561.81 4966.21)" fill={getColor('#path18_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path20_fill">
                         <use xlinkHref="#path20_fill" transform="translate(7561.81 5024.26)" fill="#FFFFFF" />
-                        <use xlinkHref="#path21_stroke" transform="translate(7561.81 5024.26)" fill="#7C7E8F" />
+                        <use xlinkHref="#path21_stroke" transform="translate(7561.81 5024.26)" fill={getColor('#path20_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path22_fill">
                         <use xlinkHref="#path22_fill" transform="translate(7704.5 4858.89)" fill="#FFFFFF" />
-                        <use xlinkHref="#path23_stroke" transform="translate(7704.5 4858.89)" fill="#7C7E8F" />
+                        <use xlinkHref="#path23_stroke" transform="translate(7704.5 4858.89)" fill={getColor('#path22_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path24_fill">
                         <use xlinkHref="#path24_fill" transform="translate(7685.92 4836.34)" fill="#FFFFFF" />
-                        <use xlinkHref="#path25_stroke" transform="translate(7685.92 4836.34)" fill="#7C7E8F" />
+                        <use xlinkHref="#path25_stroke" transform="translate(7685.92 4836.34)" fill={getColor('#path24_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path26_fill">
                         <use xlinkHref="#path26_fill" transform="translate(7729.38 4901.59)" fill="#FFFFFF" />
-                        <use xlinkHref="#path27_stroke" transform="translate(7729.38 4901.59)" fill="#7C7E8F" />
+                        <use xlinkHref="#path27_stroke" transform="translate(7729.38 4901.59)" fill={getColor('#path26_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path28_fill">
                         <use xlinkHref="#path28_fill" transform="translate(7699.81 5050.23)" fill="#FFFFFF" />
-                        <use xlinkHref="#path29_stroke" transform="translate(7699.81 5050.23)" fill="#7C7E8F" />
+                        <use xlinkHref="#path29_stroke" transform="translate(7699.81 5050.23)" fill={getColor('#path28_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path30_fill">
                         <use xlinkHref="#path30_fill" transform="translate(7685.62 4927.67)" fill="#FFFFFF" />
-                        <use xlinkHref="#path31_stroke" transform="translate(7685.62 4927.67)" fill="#7C7E8F" />
+                        <use xlinkHref="#path31_stroke" transform="translate(7685.62 4927.67)" fill={getColor('#path30_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path32_fill">
                         <use xlinkHref="#path32_fill" transform="translate(7685.62 4985.91)" fill="#FFFFFF" />
-                        <use xlinkHref="#path33_stroke" transform="translate(7685.62 4985.91)" fill="#7C7E8F" />
+                        <use xlinkHref="#path33_stroke" transform="translate(7685.62 4985.91)" fill={getColor('#path32_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path34_fill">
                         <use xlinkHref="#path34_fill" transform="translate(7684.9 5029.6)" fill="#FFFFFF" />
-                        <use xlinkHref="#path35_stroke" transform="translate(7684.9 5029.6)" fill="#7C7E8F" />
+                        <use xlinkHref="#path35_stroke" transform="translate(7684.9 5029.6)" fill={getColor('#path34_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path36_fill">
                         <use xlinkHref="#path36_fill" transform="translate(7577.5 4836.98)" fill="#FFFFFF" />
-                        <use xlinkHref="#path37_stroke" transform="translate(7577.5 4836.98)" fill="#7C7E8F" />
+                        <use xlinkHref="#path37_stroke" transform="translate(7577.5 4836.98)" fill={getColor('#path36_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path38_fill">
                         <use xlinkHref="#path38_fill" transform="translate(7580.63 4920.38)" fill="#FFFFFF" />
-                        <use xlinkHref="#path39_stroke" transform="translate(7580.63 4920.38)" fill="#7C7E8F" />
+                        <use xlinkHref="#path39_stroke" transform="translate(7580.63 4920.38)" fill={getColor('#path38_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path40_fill">
                         <use xlinkHref="#path40_fill" transform="translate(7661.27 4937.9)" fill="#FFFFFF" />
-                        <use xlinkHref="#path41_stroke" transform="translate(7661.27 4937.9)" fill="#7C7E8F" />
+                        <use xlinkHref="#path41_stroke" transform="translate(7661.27 4937.9)" fill={getColor('#path40_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path42_fill">
                         <use xlinkHref="#path42_fill" transform="translate(7660.74 4991.72)" fill="#FFFFFF" />
-                        <use xlinkHref="#path43_stroke" transform="translate(7660.74 4991.72)" fill="#7C7E8F" />
+                        <use xlinkHref="#path43_stroke" transform="translate(7660.74 4991.72)" fill={getColor('#path42_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path44_fill">
                         <use xlinkHref="#path44_fill" transform="translate(7593.24 4945.67)" fill="#FFFFFF" />
-                        <use xlinkHref="#path45_stroke" transform="translate(7593.24 4945.67)" fill="#7C7E8F" />
+                        <use xlinkHref="#path45_stroke" transform="translate(7593.24 4945.67)" fill={getColor('#path44_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path46_fill">
                         <use xlinkHref="#path46_fill" transform="translate(7564.2 4918.55)" fill="#FFFFFF" />
-                        <use xlinkHref="#path47_stroke" transform="translate(7564.2 4918.55)" fill="#7C7E8F" />
+                        <use xlinkHref="#path47_stroke" transform="translate(7564.2 4918.55)" fill={getColor('#path46_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path48_fill">
                         <use xlinkHref="#path48_fill" transform="translate(7577.72 5042.42)" fill="#FFFFFF" />
-                        <use xlinkHref="#path49_stroke" transform="translate(7577.72 5042.42)" fill="#7C7E8F" />
+                        <use xlinkHref="#path49_stroke" transform="translate(7577.72 5042.42)" fill={getColor('#path48_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path50_fill">
                         <use xlinkHref="#path50_fill" transform="translate(7575.81 5063.67)" fill="#FFFFFF" />
-                        <use xlinkHref="#path51_stroke" transform="translate(7575.81 5063.67)" fill="#7C7E8F" />
+                        <use xlinkHref="#path51_stroke" transform="translate(7575.81 5063.67)" fill={getColor('#path50_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path52_fill">
                         <use xlinkHref="#path52_fill" transform="translate(7574.15 4817)" fill="#FFFFFF" />
-                        <use xlinkHref="#path53_stroke" transform="translate(7574.15 4817)" fill="#7C7E8F" />
+                        <use xlinkHref="#path53_stroke" transform="translate(7574.15 4817)" fill={getColor('#path52_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path54_fill">
                         <use xlinkHref="#path54_fill" transform="translate(7576.5 5093.5)" fill="#FFFFFF" />
-                        <use xlinkHref="#path55_stroke" transform="translate(7576.5 5093.5)" fill="#7C7E8F" />
+                        <use xlinkHref="#path55_stroke" transform="translate(7576.5 5093.5)" fill={getColor('#path54_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path56_fill">
                         <use xlinkHref="#path56_fill" transform="translate(7574.69 5120.02)" fill="#FFFFFF" />
-                        <use xlinkHref="#path57_stroke" transform="translate(7574.69 5120.02)" fill="#7C7E8F" />
+                        <use xlinkHref="#path57_stroke" transform="translate(7574.69 5120.02)" fill={getColor('#path56_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path58_fill">
                         <use xlinkHref="#path58_fill" transform="translate(7690.25 4966.21)" fill="#FFFFFF" />
-                        <use xlinkHref="#path59_stroke" transform="translate(7690.25 4966.21)" fill="#7C7E8F" />
+                        <use xlinkHref="#path59_stroke" transform="translate(7690.25 4966.21)" fill={getColor('#path58_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path60_fill">
                         <use xlinkHref="#path60_fill" transform="translate(7690.25 5024.26)" fill="#FFFFFF" />
-                        <use xlinkHref="#path61_stroke" transform="translate(7690.25 5024.26)" fill="#7C7E8F" />
+                        <use xlinkHref="#path61_stroke" transform="translate(7690.25 5024.26)" fill={getColor('#path60_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path62_fill">
                         <use xlinkHref="#path62_fill" transform="translate(7670.6 4918.55)" fill="#FFFFFF" />
-                        <use xlinkHref="#path63_stroke" transform="translate(7670.6 4918.55)" fill="#7C7E8F" />
+                        <use xlinkHref="#path63_stroke" transform="translate(7670.6 4918.55)" fill={getColor('#path62_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path64_fill">
                         <use xlinkHref="#path64_fill" transform="translate(7650.12 5094.18)" fill="#FFFFFF" />
-                        <use xlinkHref="#path65_stroke" transform="translate(7650.12 5094.18)" fill="#7C7E8F" />
+                        <use xlinkHref="#path65_stroke" transform="translate(7650.12 5094.18)" fill={getColor('#path64_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path66_fill">
                         <use xlinkHref="#path66_fill" transform="translate(7579.5 4846.35)" fill="#FFFFFF" />
-                        <use xlinkHref="#path67_stroke" transform="translate(7579.5 4846.35)" fill="#7C7E8F" />
+                        <use xlinkHref="#path67_stroke" transform="translate(7579.5 4846.35)" fill={getColor('#path66_fill')} />
                     </g>
-                    <g id="Vector">
+                    <g id="#path68_fill">
                         <use xlinkHref="#path68_fill" transform="translate(7647.81 4846.35)" fill="#FFFFFF" />
-                        <use xlinkHref="#path69_stroke" transform="translate(7647.81 4846.35)" fill="#7C7E8F" />
+                        <use xlinkHref="#path69_stroke" transform="translate(7647.81 4846.35)" fill={getColor('#path68_fill')} />
                     </g>
                 </g>
             </g>
@@ -227,4 +225,3 @@ const PicTheme = () => {
         </svg>
     );
 }
-export default PicTheme;

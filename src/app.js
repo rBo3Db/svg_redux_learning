@@ -6,9 +6,9 @@ import thunk from 'redux-thunk';
 import {reducer} from './redux/root-reducer';
 
 import {Header} from './components/Header';
-import PicTheme from './components/PicTheme';
 import TextDescription from './components/TextDescription';
 import NextStep from './components/NextStep';
+import ImageContainer from './components/ImageContainer';
 
 import './styles/main.scss';
 
@@ -22,7 +22,7 @@ const Template = () => (
         <Header />
         <main className="main-conteiner">
             <section className="pic-block">
-                <PicTheme/>
+                <ImageContainer />
                 <div className="zoom-block">
                     <img className="zoom-block__icon" src={zoom}/>
                     <img className="zoom-block__icon" src={zoomOut}/>

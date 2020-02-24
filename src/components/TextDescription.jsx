@@ -1,13 +1,40 @@
 import React from 'react';
 import deleteIcon from '../../assets/delete.png';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { removeDetailAsync } from '../redux/actions';
+import { DetailsListItem } from './DetailsListItem';
 
-const TextDescriotion = () => {
+
+const mapActionsToProps = (dispatch) => {
+    return {
+        removeDetailAsync : bindActionCreators(removeDetailAsync, dispatch)
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        damagedDetails : state.damagedDetails
+    };
+}
+
+const TextDescription = (props) => {
+
+
+    console.log(props.damagedDetails);
+    const removeDetailFromList = (carDetailName) => {
+        props.removeDetailAsync(carDetailName);
+    };
+
     return(
-        <div className="descriotion-line">
-            Левое Переднее Крыло 
-            <img className="descriotion-line__delete" src={deleteIcon}/>
+        <div>
+            {props.damagedDetails.map(element => 
+                <DetailsListItem element={element} removeDetailFromList={removeDetailFromList} key={element.id}/>
+            )}
         </div>
     );
 }
 
-export default TextDescriotion;
+export default connect(mapStateToProps, mapActionsToProps)(TextDescription)
+
+
