@@ -1,0 +1,16 @@
+.overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000a1;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    @include modifier('display') {
+        display: none;
+    };
+}

@@ -9,6 +9,7 @@ import {Header} from './components/Header';
 import TextDescription from './components/TextDescription';
 import NextStep from './components/NextStep';
 import ImageContainer from './components/ImageContainer';
+import Popup from './components/Popup';
 
 import './styles/main.scss';
 
@@ -20,6 +21,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 const Template = () => (
     <Provider store={store}>
         <Header />
+        <Popup />
         <main className="main-conteiner">
             <section className="pic-block">
                 <ImageContainer />

@@ -6,8 +6,14 @@ export const ActionTypes = {
     REMOVE_DETAIL: 'REMOVE_DETAIL',
     REMOVE_DETAIL_SUCCESS: 'REMOVE_DETAIL_SUCCESS',
     REMOVE_DETAIL_FAILURE: 'REMOVE_DETAIL_FAILURE',
+    CLEAR_FAIL_LIST: "CLEAR_FAIL_LIST" 
   }
 
+export const cleanFailList = () => {
+    return {
+        type: ActionTypes.CLEAR_FAIL_LIST,
+    }
+}
 export const addDetail = (detailName, detailId) => {
     return {
         type: ActionTypes.ADD_DETAIL,
@@ -59,9 +65,12 @@ export function addDetailAsync(detailName, detailId) {
             }, 100)
         })
             .then(({detailName, detailId}) => {
+                console.log('success');
                 dispatch(addDetailSuccess(detailName, detailId));
             })
-            .catch(({detailName, detailId}) => dispatch(addDetailFailure(detailName, detailId)));
+            .catch(({detailName, detailId}) => {
+                console.log('fail');
+                dispatch(addDetailFailure(detailName, detailId))});
     }
   }
 

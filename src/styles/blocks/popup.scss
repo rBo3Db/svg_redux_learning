@@ -1,0 +1,11 @@
+.popup {
+    max-width: 400px;
+    align-items: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    @media (max-width: 414px) {
+        align-self: flex-start;
+    }
+}

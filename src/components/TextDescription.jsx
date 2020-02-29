@@ -1,7 +1,7 @@
 import React from 'react';
-import deleteIcon from '../../assets/delete.png';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { removeDetailAsync } from '../redux/actions';
 import { DetailsListItem } from './DetailsListItem';
 
@@ -19,7 +19,6 @@ const mapStateToProps = (state) => {
 }
 
 const TextDescription = (props) => {
-
 
     console.log(props.damagedDetails);
     const removeDetailFromList = (carDetailName) => {

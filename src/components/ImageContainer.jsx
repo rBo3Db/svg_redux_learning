@@ -1,7 +1,7 @@
 import React from 'react';
-import {carDetails} from '../utils/consts'
-import { addDetailAsync } from '../redux/actions'
-import { connect } from 'react-redux'
+import { carDetailsFills } from '../utils/consts';
+import { addDetailAsync } from '../redux/actions';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { PicTheme } from './PicTheme.jsx';
 
@@ -19,8 +19,10 @@ const mapStateToProps = (state) => {
 const ImageContainer = (props) => {
     const selectDetail = (event) => {
         if (event.target.href) { 
-            const carDetailName = carDetails[event.target.href.baseVal];
-            props.addDetailAsync(carDetailName, event.target.href.baseVal);
+            const carDetailName = carDetailsFills[event.target.href.baseVal];
+            if (carDetailName) {
+                props.addDetailAsync(carDetailName, event.target.href.baseVal);
+            }
         }
     }
 

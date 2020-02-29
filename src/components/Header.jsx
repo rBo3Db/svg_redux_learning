@@ -1,6 +1,7 @@
 import React from 'react';
-import arrow from '../../assets/arrow.png'
-import settings from '../../assets/settings.png'
+import arrow from '../../assets/arrow.png';
+import settings from '../../assets/settings.png';
+
 export function Header() {
     return (
         <header className="header">

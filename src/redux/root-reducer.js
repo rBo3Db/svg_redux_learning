@@ -7,24 +7,25 @@ import {ActionTypes} from './actions';
 // }, 'Левая Передняя Дверь'
 
 const initialState = {
-    damagedDetails : []
+    damagedDetails : [],
+    failedAction: {
+        type: 'none',
+        detailDame: '',
+    }
+}
+
+const isDetailExist = (detailsArray, detailId) => {
+    return detailsArray.some((item) => {
+        return item.id === detailId;
+    })
 }
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        // case ActionTypes.ADD_DETAIL: {
-        //     const detail = {
-        //         name: action.detailName,
-        //         id: action.detailId,
-        //     }
-        //     return {
-        //         ...state,
-        //         damagedDetails : state.damagedDetails.concat(detail)
-        //     }
-        // }
         case ActionTypes.ADD_DETAIL_SUCCESS: {
-            console.log(action);
-            // if (!state.damagedDetails.includes(action.detail)) {
+            if (isDetailExist(state.damagedDetails, action.detailId)) {
+                return state;
+            } else {
                 const detail = {
                     name: action.detailName,
                     id: action.detailId,
@@ -34,25 +35,20 @@ export const reducer = (state = initialState, action) => {
                     ...state,
                     damagedDetails : state.damagedDetails.concat(detail)
                 }
-            // } else {
-            //     return state;
-            // };
+            }
         };
         case ActionTypes.ADD_DETAIL_FAILURE: {
-            console.log(action);
-            // if (!state.damagedDetails.includes(action.detail)) {
-                const detail = {
-                    name: action.detailName,
-                    id: action.detailId,
-                    isError: true,
-                }
+            if (isDetailExist(state.damagedDetails, action.detailId)) {
+                return state;
+            } else {
                 return {
                     ...state,
-                    damagedDetails : state.damagedDetails.concat(detail)
+                    failedAction: {
+                        type: 'add',
+                        detailDame: action.detailName,
+                    }
                 }
-            // } else {
-            //     return state;
-            // };
+            }
         }
         case ActionTypes.REMOVE_DETAIL_SUCCESS: {
             return {
@@ -60,6 +56,24 @@ export const reducer = (state = initialState, action) => {
                 damagedDetails: state.damagedDetails.filter(detail => {
                     return detail !== action.detail;
                 })
+            }
+        }
+        case ActionTypes.REMOVE_DETAIL_FAILURE: {
+            return {
+                ...state,
+                failedAction: {
+                    type: 'remove',
+                    detailDame: action.detailName,
+                }
+            }
+        }
+        case ActionTypes.CLEAR_FAIL_LIST: {
+            return {
+                ...state,
+                failedAction: {
+                    type: 'none',
+                    detailDame: ''
+                }
             }
         }
         default: {
