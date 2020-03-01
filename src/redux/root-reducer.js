@@ -1,11 +1,5 @@
 import {ActionTypes} from './actions';
 
-// {
-//     name: 'Левое Переднее Крыло',
-//     id: 'left',
-//     isHighlighted: false,
-// }, 'Левая Передняя Дверь'
-
 const initialState = {
     damagedDetails : [],
     failedAction: {
@@ -58,7 +52,6 @@ export const reducer = (state = initialState, action) => {
             }
         }
         case ActionTypes.CHANGE_SCALE: {
-            console.log(action)
             return {
                 ...state,
                 scale: action.scale

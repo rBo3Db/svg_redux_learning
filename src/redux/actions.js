@@ -65,18 +65,15 @@ export const deleteDetailFailure = (detail) => {
 export function addDetailAsync(detailName, detailId) {
     return (dispatch) => {
         dispatch(addDetail(detailName, detailId))
-        console.log(detailName, detailId)
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 Math.round(Math.random()) ? resolve({detailName, detailId}) : reject({detailName, detailId})
             }, 100)
         })
             .then(({detailName, detailId}) => {
-                console.log('success');
                 dispatch(addDetailSuccess(detailName, detailId));
             })
             .catch(({detailName, detailId}) => {
-                console.log('fail');
                 dispatch(addDetailFailure(detailName, detailId))});
     }
   }

@@ -1,0 +1,10 @@
+.crashed-element {
+    width: 257px;
+    height: 372px;
+    overflow: auto;
+    @include element('pic-of-crashed-elements') {
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    
+}

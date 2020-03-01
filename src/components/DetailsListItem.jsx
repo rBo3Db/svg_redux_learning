@@ -5,7 +5,6 @@ export const DetailsListItem = ({element, removeDetailFromList}) => {
     const onRemoveClick = () => {
         removeDetailFromList(element);
     }
-    console.log(element);
     return (
         <div className="description-line" key={element.id}>
             {element.name}

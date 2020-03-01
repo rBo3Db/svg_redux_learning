@@ -19,8 +19,6 @@ const mapStateToProps = (state) => {
 }
 
 const TextDescription = (props) => {
-
-    console.log(props.damagedDetails);
     const removeDetailFromList = (carDetailName) => {
         props.removeDetailAsync(carDetailName);
     };
