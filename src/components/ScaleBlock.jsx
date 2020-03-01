@@ -10,13 +10,16 @@ import zoomOutPic from '../../assets/zoom-out.png'
 const ScaleBlock = (props) => {
     const zoom = useCallback(
         () => {
+           
             props.changeScale(props.scale + 10)
         },
         [props.scale, props.changeScale],
       );
     const zoomOut = useCallback(
         () => {
-            props.changeScale(props.scale - 10)
+            if(props.scale > -220) {
+                props.changeScale(props.scale - 10)
+            }
         },
         [props.scale, props.changeScale],
       );
