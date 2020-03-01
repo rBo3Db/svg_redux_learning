@@ -10,11 +10,9 @@ import TextDescription from './components/TextDescription';
 import NextStep from './components/NextStep';
 import ImageContainer from './components/ImageContainer';
 import Popup from './components/Popup';
+import ScaleBlock from './components/ScaleBlock';
 
 import './styles/main.scss';
-
-import zoom from '../assets/zoom.png'
-import zoomOut from '../assets/zoom-out.png'
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -25,10 +23,7 @@ const Template = () => (
         <main className="main-conteiner">
             <section className="pic-block">
                 <ImageContainer />
-                <div className="zoom-block">
-                    <img className="zoom-block__icon" src={zoom}/>
-                    <img className="zoom-block__icon" src={zoomOut}/>
-                </div>
+                <ScaleBlock />
             </section>
             <TextDescription/>
             <NextStep/>

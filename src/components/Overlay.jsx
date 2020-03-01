@@ -8,5 +8,4 @@ const Overlay = (props) => {
     )
 }
 
-export default Overlay
-//{props.show ? "overlay" : "overlay overlay--display"}
+export default Overlay;

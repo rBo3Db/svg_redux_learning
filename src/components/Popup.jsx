@@ -1,30 +1,27 @@
-import React from 'react';
 import { connect } from 'react-redux';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import {cleanFailList} from '../redux/actions';
 import Overlay from './Overlay';
 
 const Popup = (props) => {
-    console.log(props.failedAction)
-    console.log(props.failedAction.type)
-    console.log(props.failedAction.type ==="none" ? false : true)
-
     const closed = props.failedAction.type ==="none" ? false : true;
     const closeWindow = () => {
-        console.log (props.failedAction)
         props.cleanFailList();
     }
     if (props.failedAction.type !== 'none') {
         return ( 
-            // show={props.failedAction.type ==="none" ? false : true}
             <Overlay show={closed}>
                 <div className="popup">
+                    <h1>
+                        Ошибка 
+                    </h1>
+                    при {props.failedAction.type === 'add' ? 'добавлении  детали: ' : 'удалении '}
                     <h2>
-                        Ошибка
-                        {props.failedAction.type}
                         {props.failedAction.detailDame}
                     </h2>
-                    <button onClick={closeWindow}>Закрыть</button>
+                    пожалуйста, повторите попытку
+                    <button onClick={closeWindow} className="popup__close">Закрыть</button>
                 </div>
             </Overlay>
         )
@@ -42,11 +39,5 @@ const mapStateToProps = (state) => {
         failedAction : state.failedAction
     };
 }
-// const mapActionsToProps = (dispatch) => {
-//     return {
-//         removeDetailAsync : bindActionCreators(removeDetailAsync, dispatch)
-//     }
-// }
 
 export default connect(mapStateToProps, mapActionsToProps)(Popup);
-//isShown={!!props.apiStatus}

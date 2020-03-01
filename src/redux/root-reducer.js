@@ -11,7 +11,12 @@ const initialState = {
     failedAction: {
         type: 'none',
         detailDame: '',
-    }
+    },
+    pending: {
+        detailName: '',
+        detaiId: ''
+    },
+    scale: 0
 }
 
 const isDetailExist = (detailsArray, detailId) => {
@@ -33,7 +38,8 @@ export const reducer = (state = initialState, action) => {
                 }
                 return {
                     ...state,
-                    damagedDetails : state.damagedDetails.concat(detail)
+                    damagedDetails : state.damagedDetails.concat(detail),
+                    pending : '',
                 }
             }
         };
@@ -46,8 +52,16 @@ export const reducer = (state = initialState, action) => {
                     failedAction: {
                         type: 'add',
                         detailDame: action.detailName,
+                        pending : '',
                     }
                 }
+            }
+        }
+        case ActionTypes.CHANGE_SCALE: {
+            console.log(action)
+            return {
+                ...state,
+                scale: action.scale
             }
         }
         case ActionTypes.REMOVE_DETAIL_SUCCESS: {
@@ -73,6 +87,18 @@ export const reducer = (state = initialState, action) => {
                 failedAction: {
                     type: 'none',
                     detailDame: ''
+                },
+                pending: {
+                    detailId: '',
+                }
+            }
+        }
+        case ActionTypes.ADD_DETAIL: {
+            return {
+                ...state,
+                pending: {
+                    detailId: action.detailId,
+                    detailDame: action.detailName,
                 }
             }
         }

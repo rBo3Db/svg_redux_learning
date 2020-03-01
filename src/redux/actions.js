@@ -6,12 +6,19 @@ export const ActionTypes = {
     REMOVE_DETAIL: 'REMOVE_DETAIL',
     REMOVE_DETAIL_SUCCESS: 'REMOVE_DETAIL_SUCCESS',
     REMOVE_DETAIL_FAILURE: 'REMOVE_DETAIL_FAILURE',
-    CLEAR_FAIL_LIST: "CLEAR_FAIL_LIST" 
+    CLEAR_FAIL_LIST: 'CLEAR_FAIL_LIST',
+    CHANGE_SCALE: 'CHANGE_SCALE'
   }
 
 export const cleanFailList = () => {
     return {
         type: ActionTypes.CLEAR_FAIL_LIST,
+    }
+}
+export const changeScale = (scale) => {
+    return {
+        type: ActionTypes.CHANGE_SCALE,
+        scale
     }
 }
 export const addDetail = (detailName, detailId) => {

@@ -1,12 +1,27 @@
 import React from 'react';
+//0 0 237 331
+export const PicTheme = ({clickHandler, getColor, scale}) => {
 
-export const PicTheme = ({clickHandler, getColor}) => {
+        function zoom(scale) {
+            for (var i = 0; i < 4; i++) {
+            transformMatrix[i] *= scale;
+            }
+            transformMatrix[4] += (1 - scale) * centerX;
+            transformMatrix[5] += (1 - scale) * centerY;
+                        
+            var newMatrix = "matrix(" +  transformMatrix.join(' ') + ")";
+            matrixGroup.setAttributeNS(null, "transform", newMatrix);
+        }
 
+    const scaleZ = `scale(${scale/100})`;
+    const width = 237;
+    const height = 331;
+    const viewBox = `0 0 ${width} ${height}`;
     return (
-        <svg className="pic-of-crashed-elements" onClick={clickHandler} width="237" height="331" viewBox="0 0 237 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
+        <svg viewBox={viewBox}  overflow="hidden" transform={scaleZ} className="pic-of-crashed-elements" onClick={clickHandler} width="237" height="331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnslink="http://www.w3.org/1999/xlink">
             <title>Group</title>
             <desc>Created using Figma</desc>
-            <g id="Canvas" transform="translate(-7510 -4816)">
+            <g id="Canvas" transform="translate(-7510 -4816)" >
                 <g id="Group">
                     <g id="#path0_fill">
                         <use xlinkHref="#path0_fill" transform="translate(7511 4858.89)" fill="#FFFFFF" />

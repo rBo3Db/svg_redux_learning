@@ -1,20 +1,10 @@
 import React from 'react';
-import { carDetailsFills } from '../utils/consts';
-import { addDetailAsync } from '../redux/actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { PicTheme } from './PicTheme.jsx';
 
-const mapActionsToProps = (dispatch) => {
-    return {
-        addDetailAsync : bindActionCreators(addDetailAsync, dispatch)
-    }
-}
-const mapStateToProps = (state) => {
-    return {
-        damagedDetails : state.damagedDetails
-    };
-}
+import { carDetailsFills } from '../utils/consts';
+import { addDetailAsync } from '../redux/actions';
+import { PicTheme } from './PicTheme';
 
 const ImageContainer = (props) => {
     const selectDetail = (event) => {
@@ -27,7 +17,7 @@ const ImageContainer = (props) => {
     }
 
     const getDetailColor = (id) => {
-        if (props.damagedDetails.find(detail => detail.id === id)) {
+        if (props.damagedDetails.find(detail => detail.id === id) || props.pending.detailId === id) {
             return '#F2C94C'
         } else {
             return '#7C7E8F'
@@ -37,10 +27,23 @@ const ImageContainer = (props) => {
     return (
         <PicTheme
             clickHandler={selectDetail}
-            selectedDetails={props.damagedDetails}
             getColor={getDetailColor}
+            scale={props.scale}
         />
     )
+}
+
+const mapActionsToProps = (dispatch) => {
+    return {
+        addDetailAsync : bindActionCreators(addDetailAsync, dispatch)
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        damagedDetails : state.damagedDetails,
+        pending : state.pending,
+        scale : state.scale
+    };
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(ImageContainer);

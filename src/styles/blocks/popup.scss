@@ -4,8 +4,17 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    background-color: #222;
+    background-color: #ffffe6;
     @media (max-width: 414px) {
         align-self: flex-start;
+    }
+    @include element('close') {
+        border: 0;
+        border-radius:  40px;
+        background-color: $background-thirty;
+        padding: 5px;
+        margin-top: 20px;
+        font-size: $primery-text-size;
+        cursor: pointer;
     }
 }
